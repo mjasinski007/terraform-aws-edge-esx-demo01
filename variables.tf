@@ -96,6 +96,47 @@ variable "ztp_file_type" {
     type = string
 }
 
+variable "vsphere_datacenter" {
+    type = string
+}
+
+variable "vsphere_datastore"{
+    type = string
+}
+
+variable "vsphere_network_mgmt_internal" {
+    type = string
+}
+
+variable "vsphere_network_avtrx_lan" {
+    type = string
+}
+
+variable "vsphere_network_avtrx_wan" {
+    type = string
+}
+
+variable "vsphere_resource_pool" {
+    type = string
+}
+
+variable "vsphere_host" {
+    type = string
+}
+
+variable "vsphere_ovf_vm_template_name" {
+    type = string
+}
+
+variable "disk_provisioning" {
+    type = string
+}
+
+variable "instance_count" {
+     type = string
+}
+
+
 variable "avx_aws_uk_transit_gw_name" {
     type = string
 }

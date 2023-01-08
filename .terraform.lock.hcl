@@ -5,7 +5,7 @@ provider "registry.terraform.io/aviatrixsystems/aviatrix" {
   version     = "3.0.0"
   constraints = "~> 3.0.0"
   hashes = [
-    "h1:UgzAiWTxisAzZfrHyy35ylAbNK7SCS+GPTAu3D0a2RI=",
+    "h1:K6iarQODkRkXtNcvgeJ3k3YsNlMFN80GJTuz9LKClCI=",
     "zh:0a490de61bf51052ef345e0c39172add9b2b45af576e98f36a1138d45b5a123f",
     "zh:2928500272b4bb3343e9cee9471997ff9f0c62c7d8ad03a37eaf276a47bb66cd",
     "zh:2ce30a52ec24be59cdb2b015b126ff4791756ffe9a3ff9469efc6c5935019bcb",
@@ -27,7 +27,7 @@ provider "registry.terraform.io/hashicorp/aws" {
   version     = "3.76.1"
   constraints = "~> 3.0"
   hashes = [
-    "h1:z1+WjdwuRX8Aa9a7YKXErhZ5AuvoXiDq7FHts30sZak=",
+    "h1:5WSHHV9CgBvZ0rDDDxLnNHsjDfm4knb7ihJ2AIGB58A=",
     "zh:1cf933104a641ffdb64d71a76806f4df35d19101b47e0eb02c9c36bd64bfdd2d",
     "zh:273afaf908775ade6c9d32462938e7739ee8b00a0de2ef3cdddc5bc115bb1d4f",
     "zh:2bc24ae989e38f575de034083082c69b41c54b8df69d35728853257c400ce0f4",
@@ -50,7 +50,7 @@ provider "registry.terraform.io/hashicorp/vsphere" {
   version     = "2.2.0"
   constraints = "~> 2.2.0"
   hashes = [
-    "h1:4rpQPP8bbZu+1SvI05ZEsbgc6T3vu0XPfccy71o4PUI=",
+    "h1:6cjNpLbR0Ltc9svrud79DyBDT6t8WicTEfhQqUQhtjk=",
     "zh:0ad0e5ab19d37c29e8aa44626572cf2d9a9ed72720978ae1db4a82e5e3961f7f",
     "zh:0fa82a384b25a58b65523e0ea4768fa1212b1f5cfc0c9379d31162454fedcc9d",
     "zh:3aaba6b21f95efc217a76a67f351cf719dfcd22880ccd06997448d6314aace3c",
