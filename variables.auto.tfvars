@@ -4,7 +4,7 @@ aws_uk_region = "eu-west-2"
 aws_eu_region = "eu-west-1"
 
 ctrl_username         = "admin"
-ctrl_password         = "Its@secret!23"
+ctrl_password         = "CHANGE_ME"
 ctrl_ip               = "3.10.92.20"
 aws_ctrl_account_name = "avtx_aws_account"
 
