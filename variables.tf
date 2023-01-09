@@ -1,4 +1,3 @@
-### Aviatrix Controller Variables ###
 variable "ctrl_username" {
     type = string
 }
@@ -134,33 +133,4 @@ variable "disk_provisioning" {
 
 variable "instance_count" {
      type = string
-}
-
-
-variable "avx_aws_uk_transit_gw_name" {
-    type = string
-}
-
-variable "avx_aws_uk_transit_gw_instance_size" {
-    type = string
-}
-
-variable "avx_aws_uk_transit_vpc_cidr" {
-    type = string
-}
-
-variable "avx_aws_uk_transit_vpc_name" {
-    type = string
-}
-
-variable "avx_aws_uk_spoke_prod_gw_name" {
-    type = string
-}
-
-variable "avx_aws_uk_spoke_prod_gw_instance_size" {
-    type = string
-}
-
-variable "avx_aws_uk_spoke_prod_vpc_cidr" {
-    type = string
 }

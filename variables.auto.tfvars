@@ -8,8 +8,8 @@ ctrl_password         = "Its@secret!23"
 ctrl_ip               = "3.10.92.20"
 aws_ctrl_account_name = "avtx_aws_account"
 
-side_id                        = "avxEdgeESX6GW01"
-edge_gw_name                   = "avx-edge-esx6-gw01"
+side_id                        = "esx67"
+edge_gw_name                   = "avx-edge-esx-gw01"
 lan_interface_prefix           = "192.168.10.2/24"
 wan_default_gateway_ip         = "192.168.200.1"
 wan_interface_ip_prefix        = "192.168.200.0/30"
@@ -38,17 +38,3 @@ vsphere_host                  = "192.168.0.151"
 vsphere_ovf_vm_template_name  = "edge_ova_template"
 disk_provisioning             = "thin"
 instance_count                = "1"
-
-
-
-
-
-
-avx_aws_uk_transit_gw_name             = "avx-aws-uk-transit-gw"
-avx_aws_uk_transit_gw_instance_size    = "t3.medium"
-avx_aws_uk_transit_vpc_cidr            = "10.100.0.0/16"
-avx_aws_uk_transit_vpc_name            = "avx-aws-uk-transit-vpc"
-
-avx_aws_uk_spoke_prod_gw_name          = "avx-aws-uk-prod-spk-gw"
-avx_aws_uk_spoke_prod_gw_instance_size = "t3.medium"
-avx_aws_uk_spoke_prod_vpc_cidr         = "10.10.0.0/16"

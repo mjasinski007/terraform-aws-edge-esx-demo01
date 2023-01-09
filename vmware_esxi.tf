@@ -1,4 +1,3 @@
-
 data "vsphere_datacenter" "datacenter" {
   name = var.vsphere_datacenter
 }
@@ -39,11 +38,12 @@ data "vsphere_ovf_vm_template" "edge_ova" {
   resource_pool_id  = data.vsphere_resource_pool.default_resource_pool.id
   datastore_id      = data.vsphere_datastore.datastore.id
   host_system_id    = data.vsphere_host.esx_host.id
+  #remote_ovf_url    =  "https://drive.google.com/file/d/12FE_4PBFWkS62HAiHZd3spmSda3XZmog/view?usp=share_link"
   local_ovf_path    = "/home/vmario/vDEVNET_Projects/Terraform_Projects/terraform-aws-edge-esx-demo01/avx-edge-gateway-vmware-2022-10-26.ova"
   ovf_network_map = {
-    "WAN Interface" : data.vsphere_network.pg_avtrx_wan.id,
-    "LAN Interface" : data.vsphere_network.pg_avtrx_lan.id,
-    "MGMT Interface" : data.vsphere_network.pg_mgmt_internal.id
+    "WAN_Interface" : data.vsphere_network.pg_avtrx_wan.id,
+    "LAN_Interface" : data.vsphere_network.pg_avtrx_lan.id,
+    "MGMT_Interface" : data.vsphere_network.pg_mgmt_internal.id
   }
 }
 
@@ -72,14 +72,19 @@ resource "vsphere_virtual_machine" "vedge_vm" {
 
   wait_for_guest_net_timeout = 0
   wait_for_guest_ip_timeout  = 0
-
-  dynamic "network_interface" {
-    for_each = data.vsphere_ovf_vm_template.edge_ova.ovf_network_map
-    content {
-      network_id = network_interface.value
-    }
+  
+  network_interface {
+    network_id = data.vsphere_ovf_vm_template.edge_ova.ovf_network_map["WAN_Interface"]
   }
   
+  network_interface {
+    network_id = data.vsphere_ovf_vm_template.edge_ova.ovf_network_map["LAN_Interface"]
+  }
+  
+  network_interface {
+    network_id = data.vsphere_ovf_vm_template.edge_ova.ovf_network_map["MGMT_Interface"]
+  }
+
   ovf_deploy {
     local_ovf_path    = data.vsphere_ovf_vm_template.edge_ova.local_ovf_path
     disk_provisioning = data.vsphere_ovf_vm_template.edge_ova.disk_provisioning
@@ -93,13 +98,10 @@ resource "vsphere_virtual_machine" "vedge_vm" {
     path         = "ISO/edge_config_ready_to_deploy.iso"
   }
   
- 
-  
   lifecycle {
     ignore_changes = [
         annotation,
         disk[0].io_share_count,
-        vapp[0].properties,
     ]
   }
   
