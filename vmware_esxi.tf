@@ -38,8 +38,8 @@ data "vsphere_ovf_vm_template" "edge_ova" {
   resource_pool_id  = data.vsphere_resource_pool.default_resource_pool.id
   datastore_id      = data.vsphere_datastore.datastore.id
   host_system_id    = data.vsphere_host.esx_host.id
-  #remote_ovf_url    =  "https://drive.google.com/file/d/12FE_4PBFWkS62HAiHZd3spmSda3XZmog/view?usp=share_link"
-  local_ovf_path    = "/home/vmario/vDEVNET_Projects/Terraform_Projects/terraform-aws-edge-esx-demo01/avx-edge-gateway-vmware-2022-10-26.ova"
+  remote_ovf_url    =  "https://pubstorage8899.s3.eu-west-2.amazonaws.com/avx-edge-gateway-vmware-2022-10-26.ova"
+  #local_ovf_path    = "/home/vmario/vDEVNET_Projects/Terraform_Projects/terraform-aws-edge-esx-demo01/avx-edge-gateway-vmware-2022-10-26.ova"
   ovf_network_map = {
     "WAN_Interface" : data.vsphere_network.pg_avtrx_wan.id,
     "LAN_Interface" : data.vsphere_network.pg_avtrx_lan.id,
