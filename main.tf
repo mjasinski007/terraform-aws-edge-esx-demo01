@@ -10,7 +10,7 @@ module "edge_esx_gw01" {
             lan_interface_ip_prefix        = var.lan_interface_prefix
             wan_default_gateway_ip         = var.wan_default_gateway_ip
             wan_interface_ip_prefix        = var.wan_interface_ip_prefix
-            #wan_public_ip                  = var.wan_public_ip
+            wan_public_ip                  = var.wan_public_ip
             dns_server_ip                  = var.primary_dns_server_ip
             secondary_dns_server_ip        = var.secondary_dns_server_ip
             enable_edge_transitive_routing = false
@@ -23,9 +23,10 @@ module "edge_esx_gw01" {
             ztp_file_type                  = var.ztp_file_type
 
             transit_gws = {
-                transit1 = {
-                    name = var.avx_aws_transit
-                    #attached = var.avx_aws_transit_attached
+                aws_uk_transit_gws = {
+                    name                        = var.avx_aws_transit
+                    enable_over_private_network = var.transit_gws_enable_over_private_network
+                    attached                    = var.avx_aws_transit_attached
                 },
             }
         }
