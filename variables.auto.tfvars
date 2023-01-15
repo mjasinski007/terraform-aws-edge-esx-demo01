@@ -9,7 +9,7 @@ ctrl_ip               = "3.10.92.20"
 aws_ctrl_account_name = "avtx_aws_account"
 
 side_id                                 = "esx67"
-edge_gw_name                            = "avx-edge-esx-gw01"
+edge_gw_name                            = "AVTRX-EDGE2-ESX-GW01"
 lan_interface_prefix                    = "192.168.10.2/24"      # Assigned to Edge
 wan_default_gateway_ip                  = "192.168.200.254"      # Assigned to upstream gateway
 wan_interface_ip_prefix                 = "192.168.200.253/30"   # Assigned to Edge
