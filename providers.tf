@@ -17,7 +17,7 @@ provider "aws" {
 
 provider "vsphere" {
     user                 = "administrator@vdevnetpro.com"
-    password             = "CHANGEME"
+    password             = "Qaz!741852"
     vsphere_server       = "vcenter7srv01.vdevnetpro.com"
     allow_unverified_ssl = true # If you have a self-signed cert
 }
