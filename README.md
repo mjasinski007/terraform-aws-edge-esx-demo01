@@ -64,7 +64,7 @@ resource "vsphere_virtual_machine" "vedge_vm" {
 - After successfully deployment, please attach the edge gateway to aviatrix gateways by uncommneting the following parameter in the `variables.auto.tfvars` file.
 
 ```hcl
-avx_aws_transit_attached                = true
+avx_aws_transit_attached  = true
 ```
 
 - Issue the `terraform apply` again.
