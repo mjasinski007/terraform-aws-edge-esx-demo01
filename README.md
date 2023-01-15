@@ -13,7 +13,8 @@
 
 - Physical/Logical connections in my lab. 
 
-![Screenshot 2023-01-15 at 16 40 52](https://user-images.githubusercontent.com/102957943/212554017-883aa631-40ac-4ac4-87b7-2b96dad4f4f0.png)
+![Screenshot 2023-01-15 at 16 54 28](https://user-images.githubusercontent.com/102957943/212554648-ff81bb1b-0c8d-49f0-a2bf-9e7e5813e143.png)
+
 
 # Deployments
 
@@ -35,3 +36,24 @@ resource "vsphere_virtual_machine" "vedge_vm" {
   }
 }
 ```
+
+- In order to use remote site where `ova` template is located, do some chnages in the `vmaware_esxi.tf` file:
+
+```hcl
+data "vsphere_ovf_vm_template" "edge_ova" { 
+  .....(omitted)....
+  remote_ovf_url = "https://bucked_name.s3.eu-west-2.amazonaws.com/avx-edge-gateway-vmware-2022-10-26.ova"
+}
+
+resource "vsphere_virtual_machine" "vedge_vm" {
+  ....(omitted)....
+  
+  vf_deploy {
+    remote_ovf_url  = data.vsphere_ovf_vm_template.edge_ova.remote_ovf_url
+  }
+}
+```
+
+
+
+
