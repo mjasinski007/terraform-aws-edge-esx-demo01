@@ -1,136 +1,140 @@
 variable "ctrl_username" {
-    type = string
+  type = string
 }
 
 variable "ctrl_password" {
-    type = string
+  type = string
 }
 
 variable "ctrl_ip" {
-    type = string
+  type = string
 }
 
 variable "aws_ctrl_account_name" {
-    type = string
+  type = string
 }
 
 variable "aws_profile" {
-    type = string
+  type = string
 }
 
 variable "aws_uk_region" {
-    type = string
+  type = string
 }
 
 variable "aws_eu_region" {
-    type = string
+  type = string
 }
 
 variable "side_id" {
-    type = string
+  type = string
 }
 
 variable "edge_gw_name" {
-    type = string
+  type = string
 }
 
 variable "lan_interface_prefix" {
-    type = string
+  type = string
 }
 
 variable "wan_default_gateway_ip" {
-    type = string
+  type = string
 }
 
 variable "wan_interface_ip_prefix" {
-    type = string
+  type = string
 }
 
-/* variable "wan_public_ip" {
-    type = string
-} */
+variable "wan_public_ip" {
+  type = string
+}
+
+variable "transit_gws_enable_over_private_network" {
+  type = string
+}
 
 variable "primary_dns_server_ip" {
-    type = string
+  type = string
 }
 
 variable "secondary_dns_server_ip" {
-    type = string
+  type = string
 }
 
 variable "enable_edge_transitive_routing" {
-    type = bool
+  type = bool
 }
 
 variable "management_default_gateway_ip" {
-    type = string
+  type = string
 }
 
 variable "management_egress_ip_prefix" {
-    type = string
+  type = string
 }
 
 variable "management_interface_config" {
-    type = string
+  type = string
 }
 
 variable "management_interface_ip_prefix" {
-    type = string
+  type = string
 }
 
 variable "avx_aws_transit" {
-    type = string
+  type = string
 }
 
 variable "avx_aws_transit_attached" {
-    type    = bool
-    default = false
+  type    = bool
+  default = false
 }
 
 variable "edge_local_as_number" {
-    type = string
+  type = string
 }
 
 variable "ztp_file_type" {
-    type = string
+  type = string
 }
 
 variable "vsphere_datacenter" {
-    type = string
+  type = string
 }
 
-variable "vsphere_datastore"{
-    type = string
+variable "vsphere_datastore" {
+  type = string
 }
 
 variable "vsphere_network_mgmt_internal" {
-    type = string
+  type = string
 }
 
 variable "vsphere_network_avtrx_lan" {
-    type = string
+  type = string
 }
 
 variable "vsphere_network_avtrx_wan" {
-    type = string
+  type = string
 }
 
 variable "vsphere_resource_pool" {
-    type = string
+  type = string
 }
 
 variable "vsphere_host" {
-    type = string
+  type = string
 }
 
 variable "vsphere_ovf_vm_template_name" {
-    type = string
+  type = string
 }
 
 variable "disk_provisioning" {
-    type = string
+  type = string
 }
 
 variable "instance_count" {
-     type = string
+  type = string
 }
