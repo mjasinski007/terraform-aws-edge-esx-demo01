@@ -18,14 +18,13 @@
 
 # Deployments
 
-- Please clone the code and provide your values in the `variables.auto.tfvars` file.
+- Please clone the repository and provide your variable values in the `variables.auto.tfvars` file.
 
 
 ## OVA Template
 
 
-- In case if you use the `.ova` file locally, the following amends have to be done:
- - Amend the following file `vmaware_esxi.tf` as follows: 
+- In case if you use the `.ova` file located locally, the following amends have to be done in the `vmaware_esxi.tf` file:
 
 ```hcl
 data "vsphere_ovf_vm_template" "edge_ova" { 
@@ -42,7 +41,7 @@ resource "vsphere_virtual_machine" "vedge_vm" {
 }
 ```
 
-- In order to use remote site where `ova` template is located (e.q S3 bucket), do some chnages in the `vmaware_esxi.tf` file:
+- In order to use remote site where `ova` template is located (e.q S3 bucket), do some changes as follows:
 
 ```hcl
 data "vsphere_ovf_vm_template" "edge_ova" { 
