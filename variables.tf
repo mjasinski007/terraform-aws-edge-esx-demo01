@@ -62,8 +62,8 @@ variable "secondary_dns_server_ip" {
   type = string
 }
 
-variable "enable_edge_transitive_routing" {
-  type = bool
+variable "enable_transitive_routing" {
+  type = string
 }
 
 variable "management_default_gateway_ip" {
@@ -138,3 +138,4 @@ variable "disk_provisioning" {
 variable "instance_count" {
   type = string
 }
+

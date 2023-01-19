@@ -38,8 +38,8 @@ data "vsphere_ovf_vm_template" "edge_ova" {
   resource_pool_id  = data.vsphere_resource_pool.default_resource_pool.id
   datastore_id      = data.vsphere_datastore.datastore.id
   host_system_id    = data.vsphere_host.esx_host.id
-  remote_ovf_url    =  "https://pubstorage8899.s3.eu-west-2.amazonaws.com/avx-edge-gateway-vmware-2022-10-26.ova"
-  #local_ovf_path    = "/home/vmario/vDEVNET_Projects/Terraform_Projects/terraform-aws-edge-esx-demo01/avx-edge-gateway-vmware-2022-10-26.ova" 
+  #remote_ovf_url    =  "https://pubstorage8899.s3.eu-west-2.amazonaws.com/avx-edge-gateway-vmware-2022-10-26.ova"
+  local_ovf_path    = "/home/vmario/vDEVNET_Projects/Terraform/terraform-aws-edge-esx-demo01/ovf_template/avx-edge-gateway.ovf"
   ovf_network_map = {
     "WAN_Interface" : data.vsphere_network.pg_avtrx_wan.id,
     "LAN_Interface" : data.vsphere_network.pg_avtrx_lan.id,
@@ -86,8 +86,8 @@ resource "vsphere_virtual_machine" "vedge_vm" {
   }
 
   ovf_deploy {
-    remote_ovf_url    = data.vsphere_ovf_vm_template.edge_ova.remote_ovf_url
-    #local_ovf_path    = data.vsphere_ovf_vm_template.edge_ova.local_ovf_path # Used when file stored locally
+    #remote_ovf_url    = data.vsphere_ovf_vm_template.edge_ova.remote_ovf_url
+    local_ovf_path    = data.vsphere_ovf_vm_template.edge_ova.local_ovf_path # Used when file stored locally
     disk_provisioning = data.vsphere_ovf_vm_template.edge_ova.disk_provisioning
     deployment_option = data.vsphere_ovf_vm_template.edge_ova.deployment_option
     ip_protocol       = data.vsphere_ovf_vm_template.edge_ova.ip_protocol

@@ -13,7 +13,7 @@ module "edge_esx_gw01" {
             wan_public_ip                  = var.wan_public_ip
             dns_server_ip                  = var.primary_dns_server_ip
             secondary_dns_server_ip        = var.secondary_dns_server_ip
-            enable_edge_transitive_routing = false
+            enable_edge_transitive_routing = var.enable_transitive_routing
             management_default_gateway_ip  = var.management_default_gateway_ip
             management_egress_ip_prefix    = var.management_egress_ip_prefix
             management_interface_config    = var.management_interface_config
