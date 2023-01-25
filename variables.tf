@@ -1,3 +1,5 @@
+### Aviatrix Controller ###
+
 variable "ctrl_username" {
   type = string
 }
@@ -14,6 +16,8 @@ variable "aws_ctrl_account_name" {
   type = string
 }
 
+### AWS ###
+
 variable "aws_profile" {
   type = string
 }
@@ -22,9 +26,7 @@ variable "aws_uk_region" {
   type = string
 }
 
-variable "aws_eu_region" {
-  type = string
-}
+### Aviatrix Edge ###
 
 variable "side_id" {
   type = string
@@ -99,6 +101,25 @@ variable "ztp_file_type" {
   type = string
 }
 
+
+# VSphere
+
+variable "vsphere_provider_user" {
+  type = string
+}
+
+variable "vsphere_provider_password" {
+  type = string
+}
+
+variable "vsphere_provider_vcenter" {
+  type = string
+}
+
+variable "allow_unverified_ssl" {
+  type = bool
+}
+
 variable "vsphere_datacenter" {
   type = string
 }
@@ -139,3 +160,14 @@ variable "instance_count" {
   type = string
 }
 
+variable "remote_ovf_url" {
+  type = string
+}
+
+variable "local_ovf_path" {
+  type = string
+}
+
+variable "cdrom_iso_path" {
+  type = string
+}

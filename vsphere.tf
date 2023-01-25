@@ -38,8 +38,8 @@ data "vsphere_ovf_vm_template" "edge_ova" {
   resource_pool_id  = data.vsphere_resource_pool.default_resource_pool.id
   datastore_id      = data.vsphere_datastore.datastore.id
   host_system_id    = data.vsphere_host.esx_host.id
-  remote_ovf_url    =  "https://pubstorage8899.s3.eu-west-2.amazonaws.com/edge_ovf/avx-edge-gateway.ovf"
-  #local_ovf_path    = "/home/vmario/vDEVNET_Projects/Terraform/terraform-aws-edge-esx-demo01/ovf_template/avx-edge-gateway.ovf"
+  remote_ovf_url    = var.remote_ovf_url
+  #local_ovf_path    = var.local_ovf_path
   ovf_network_map = {
     "WAN_Interface" : data.vsphere_network.pg_avtrx_wan.id,
     "LAN_Interface" : data.vsphere_network.pg_avtrx_lan.id,
@@ -51,7 +51,7 @@ resource "vsphere_file" "edge_config_iso_upload" {
   datacenter         = data.vsphere_datacenter.datacenter.name
   datastore          = data.vsphere_datastore.datastore.name
   source_file        = "./${var.edge_gw_name}-${var.side_id}.iso"
-  destination_file   = "ISO/edge_config_ready_to_deploy.iso"
+  destination_file   = var.cdrom_iso_path
   create_directories = false
 
   depends_on = [
@@ -96,7 +96,7 @@ resource "vsphere_virtual_machine" "vedge_vm" {
   
   cdrom {
     datastore_id = data.vsphere_datastore.datastore.id
-    path         = "ISO/edge_config_ready_to_deploy.iso"
+    path         = var.cdrom_iso_path
   }
   
   lifecycle {

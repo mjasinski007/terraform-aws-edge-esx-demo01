@@ -1,12 +1,17 @@
-## AWS Provider
+### AWS ###
+
 aws_profile   = "169444603265"
 aws_uk_region = "eu-west-2"
 aws_eu_region = "eu-west-1"
+
+### Aviatrix Controller ###
 
 ctrl_username         = "admin"
 ctrl_password         = "Its@secret!23"
 ctrl_ip               = "3.10.92.20"
 aws_ctrl_account_name = "avtx_aws_account"
+
+### Aviatrix Edge 2.0 ###
 
 side_id                                 = "esx67"
 edge_gw_name                            = "AVTRX-EDGE2-ESX-GW01"
@@ -28,6 +33,13 @@ avx_aws_transit                         = "avx-aws-uk-transit-gw"
 #avx_aws_transit_attached                = true # uncomment it when Edge gateway will be deployed
 
 
+
+### VMware VSphere ###
+
+vsphere_provider_user         = "administrator@vdevnetpro.com"
+vsphere_provider_password     = "Qaz!741852"
+vsphere_provider_vcenter      = "vcenter7srv01.vdevnetpro.com"
+allow_unverified_ssl          = true
 vsphere_datacenter            = "vDEVNETPRO-DC"
 vsphere_datastore             = "ESX67_SRV01_SSD_LOCAL"
 vsphere_resource_pool         = "AVIATRIX_RP"
@@ -38,3 +50,6 @@ vsphere_host                  = "esx67srv01.vdevnetpro.com"
 vsphere_ovf_vm_template_name  = "edge_ova_template"
 disk_provisioning             = "thin"
 instance_count                = "1"
+remote_ovf_url                = "https://pubstorage8899.s3.eu-west-2.amazonaws.com/avx-edge-gateway-vmware-2022-10-26.ova"
+local_ovf_path                = ""
+cdrom_iso_path                = "ISO/edge_config_ready_to_deploy.iso"

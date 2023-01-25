@@ -7,17 +7,12 @@ provider "aviatrix" {
 provider "aws" {
     profile = var.aws_profile
     region  = var.aws_uk_region
-}
-
-provider "aws" {
-    profile = var.aws_profile
-    region  = var.aws_uk_region
     alias   = "aws_uk_region_alias"
 }
 
 provider "vsphere" {
-    user                 = "administrator@vdevnetpro.com"
-    password             = "Qaz!741852"
-    vsphere_server       = "vcenter7srv01.vdevnetpro.com"
-    allow_unverified_ssl = true # If you have a self-signed cert
+    user                 = var.vsphere_provider_user
+    password             = var.vsphere_provider_password
+    vsphere_server       = var.vsphere_provider_vcenter
+    allow_unverified_ssl = var.allow_unverified_ssl
 }
