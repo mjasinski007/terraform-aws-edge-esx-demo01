@@ -1,28 +1,30 @@
-# Objectives
+# End-to-End Provsioning Aviatrix Edge 2.x using ISO file.
+
+## Objectives
 
 - End-to-End **Edge 2.0** gateway provision using Terraform on VMware ESX host (On-Prem). 
 - Create intial Edge configuration as `.ISO` file
 - Attach newly deployed and registered **Edge gateway** into the existing Aviatrix Transit.
 
-# Prerequisites
+## Prerequisites
 
 - VMware ESX host and VMware vCenter (Required)
 - Aviatrix Transit VPC/Gateways deployed (Optionally)
 - Aviatrix Spoke VPC/Gateways deployed (Optionally)
 
-# Topology
+## Topology
 
 - Physical/Logical connections in my lab. 
 
 ![Screenshot 2023-01-25 at 22 30 53](https://user-images.githubusercontent.com/102957943/214706833-a9ebc3e7-56c5-424a-a88c-63d2da8ab740.png)
 
 
-# Deployments
+## Deployments
 
 - Please clone the repository and provide your variable values in the `variables.auto.tfvars` file.
 
 
-## OVA Template
+### OVA Template
 
 
 - In case if you use the `.ova` file located locally, the following amends have to be done in the `vmaware_esxi.tf` file:
@@ -59,7 +61,7 @@ resource "vsphere_virtual_machine" "vedge_vm" {
 }
 ```
 
-## Attaching to Aviatrix Transit Gateways
+### Attaching to Aviatrix Transit Gateways
 
 - After successfully deployment, please attach the edge gateway to aviatrix gateways by uncommneting the following parameter in the `variables.auto.tfvars` file.
 
@@ -68,6 +70,3 @@ avx_aws_transit_attached  = true
 ```
 
 - Issue the `terraform apply` again.
-
-
-
