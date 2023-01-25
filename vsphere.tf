@@ -93,7 +93,7 @@ resource "vsphere_virtual_machine" "vedge_vm" {
     ip_protocol       = data.vsphere_ovf_vm_template.edge_ova.ip_protocol
     ovf_network_map   = data.vsphere_ovf_vm_template.edge_ova.ovf_network_map
   }
-
+  
   cdrom {
     datastore_id = data.vsphere_datastore.datastore.id
     path         = "ISO/edge_config_ready_to_deploy.iso"
@@ -111,4 +111,3 @@ resource "vsphere_virtual_machine" "vedge_vm" {
     vsphere_file.edge_config_iso_upload
     ]
  }
-#
