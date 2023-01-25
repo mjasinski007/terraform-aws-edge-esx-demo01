@@ -1,14 +1,14 @@
 ### AWS ###
 
-aws_profile   = "169444603265"
+aws_profile   = "AWS_PROFILE"  #_!!! CHANGE ME !!!_#
 aws_uk_region = "eu-west-2"
 aws_eu_region = "eu-west-1"
 
 ### Aviatrix Controller ###
 
 ctrl_username         = "admin"
-ctrl_password         = "Its@secret!23"
-ctrl_ip               = "3.10.92.20"
+ctrl_password         = "CONTROLLER_PASSWORD" #_!!! CHANGE ME !!!_#
+ctrl_ip               = "CONTROLLER_IP" #_!!! CHANGE ME !!!_#
 aws_ctrl_account_name = "avtx_aws_account"
 
 ### Aviatrix Edge 2.0 ###
@@ -37,12 +37,12 @@ avx_aws_transit                         = "avx-aws-uk-transit-gw"
 ### VMware VSphere ###
 
 vsphere_provider_user         = "administrator@vdevnetpro.com"
-vsphere_provider_password     = "Qaz!741852"
+vsphere_provider_password     = "vCENTER_PASSWORD"    #_!!! CHANGE ME !!!_#
 vsphere_provider_vcenter      = "vcenter7srv01.vdevnetpro.com"
 allow_unverified_ssl          = true
 vsphere_datacenter            = "vDEVNETPRO-DC"
 vsphere_datastore             = "ESX67_SRV01_SSD_LOCAL"
-vsphere_resource_pool         = "AVIATRIX_RP"
+vsphere_resource_pool         = "AVIATRIX_RP"  # Must be created on vCenter
 vsphere_network_avtrx_lan     = "pg_avtrx_net10_lan"
 vsphere_network_avtrx_wan     = "pg_avtrx_net200_wan"
 vsphere_network_mgmt_internal = "pg_mgmt_external"
