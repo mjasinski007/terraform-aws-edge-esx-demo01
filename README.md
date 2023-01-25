@@ -1,7 +1,8 @@
 # Objectives
 
 - End-to-End **Edge 2.0** gateway provision using Terraform on VMware ESX host (On-Prem). 
-- Attach newly deployed **Edge gateway** into the existing Aviatrix Transit.
+- Create intial Edge configuration as `.ISO` file
+- Attach newly deployed and registered **Edge gateway** into the existing Aviatrix Transit.
 
 # Prerequisites
 
