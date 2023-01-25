@@ -111,3 +111,4 @@ resource "vsphere_virtual_machine" "vedge_vm" {
     vsphere_file.edge_config_iso_upload
     ]
  }
+#
