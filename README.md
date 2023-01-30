@@ -16,7 +16,9 @@
 
 - Physical/Logical connections in my lab. 
 
-![Screenshot 2023-01-25 at 22 30 53](https://user-images.githubusercontent.com/102957943/214706833-a9ebc3e7-56c5-424a-a88c-63d2da8ab740.png)
+
+![Screenshot 2023-01-30 at 10 50 59](https://user-images.githubusercontent.com/102957943/215457298-62736dd2-077b-45b2-9db9-2ec92a6c47b2.png)
+
 
 
 ## Deployments
